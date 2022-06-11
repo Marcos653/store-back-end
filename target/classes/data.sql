@@ -35,3 +35,6 @@ INSERT INTO PRODUCTS(name, amount, price) VALUES('Mamao', 10, 1.46);
 INSERT INTO PRODUCTS(name, amount, price) VALUES('Morango', 50, 11.45);
 INSERT INTO PRODUCTS(name, amount, price) VALUES('Pera', 10, 20.11);
 INSERT INTO PRODUCTS(name, amount, price) VALUES('Kiwi', 7, 11.44);
+
+
+INSERT INTO SALES(sale_amount, customer_id, seller_id, product_id) VALUES(10, 1, 1, 1);

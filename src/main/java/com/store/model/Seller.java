@@ -23,7 +23,7 @@ public class Seller {
     @Column(name = "CNPJ")
     private String CNPJ;
 
-
+    
     @OneToMany(mappedBy = "seller")
     private List<Product> products = new ArrayList<>();
 

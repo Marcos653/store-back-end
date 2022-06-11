@@ -1,66 +1,35 @@
-package com.store.model;
+package com.store.shared;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.store.model.Customer;
+import com.store.model.Product;
+import com.store.model.Seller;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-@Entity
-@Table(name = "sales")
-public class Sale {
+public class SaleDTO {
     
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-    @Column(name = "sale_amount")
     private Integer sale_amount;
-    @Column(name = "created_at")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created_at = LocalDateTime.now();
 
-    @OneToOne
     private Customer customer;
 
-    @OneToOne
     private Seller seller;
 
-    @OneToOne
     private Product product;
-    
-
-    public Sale() {
-    }
-    
-
-    public Sale(Customer customer, Seller seller) {
-        this.customer = customer;
-        this.seller = seller;
-    }
 
     
-
-
-    public Sale(Customer customer, Seller seller, Product product) {
-        this.customer = customer;
-        this.seller = seller;
-        this.product = product;
-    }
 
 
     public Product getProduct() {
         return product;
     }
 
-
     public void setProduct(Product product) {
         this.product = product;
     }
-
 
     public Long getId() {
         return id;
@@ -78,11 +47,18 @@ public class Sale {
         this.sale_amount = sale_amount;
     }
 
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
     public Customer getCustomer() {
         return customer;
     }
 
-    @JsonProperty("customerId")
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
@@ -91,11 +67,10 @@ public class Sale {
         return seller;
     }
 
-    @JsonProperty("sellerId")
     public void setSeller(Seller seller) {
         this.seller = seller;
     }
-    
-    
 
+
+    
 }
