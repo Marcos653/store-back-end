@@ -76,7 +76,7 @@ public class CustomerController {
         CustomerDTO customerDTO = mapper
             .map(newCustomer, CustomerDTO.class);
 
-        if(newCustomer.getName() != null){
+        if(customerDTO.getName() != null){
             customerDTO = service.partialUpdateCustomer(id, newCustomer.getName(), newCustomer.getCPF()); 
         }
 
