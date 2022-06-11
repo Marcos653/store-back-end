@@ -1,5 +1,9 @@
 package com.store.view.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.store.model.Product;
 import com.store.shared.CustomerDTO;
 
 public class CustomerResponse {
@@ -7,12 +11,14 @@ public class CustomerResponse {
     private Long id;
     private String name;
     private String CPF;
+    private List<Product> products = new ArrayList<>();
 
     
     public CustomerResponse(CustomerDTO customerDTO) {
         this.id = customerDTO.getId();
         this.name = customerDTO.getName();
         this.CPF = customerDTO.getCPF();
+        this.products = customerDTO.getProducts();
     }
 
     public CustomerResponse() {
@@ -36,6 +42,14 @@ public class CustomerResponse {
     }
     public void setCPF(String cPF) {
         CPF = cPF;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     
