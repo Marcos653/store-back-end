@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,7 +23,7 @@ public class Customer {
     @Column(name = "CPF")
     private String CPF;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "customer")
     private List<Product> products = new ArrayList<>();
 
 

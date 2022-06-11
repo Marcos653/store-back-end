@@ -22,3 +22,16 @@ INSERT INTO SELLERS(name, CNPJ) VALUES('Mateus', '77.589.132/0001-25');
 INSERT INTO SELLERS(name, CNPJ) VALUES('Guilherme', '62.304.791/0001-09');
 INSERT INTO SELLERS(name, CNPJ) VALUES('Juliana', '53.006.660/0001-46');
 INSERT INTO SELLERS(name, CNPJ) VALUES('Roberta', '13.019.120/0001-82');
+
+
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Banana', 10, 10.9);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Melao', 4, 11.99);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Abacaxi', 6, 4.56);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Abacate', 4, 3.59);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Maça', 45, 2.45);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Uva', 20, 1.49);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Manga', 30, 2.56);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Mamao', 10, 1.46);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Morango', 50, 11.45);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Pera', 10, 20.11);
+INSERT INTO PRODUCTS(name, amount, price) VALUES('Kiwi', 7, 11.44);

@@ -26,6 +26,9 @@ public class Product {
     @ManyToOne
     private Seller seller;
 
+    @ManyToOne
+    private Customer customer;
+
     
 
     public Product() {
@@ -38,6 +41,8 @@ public class Product {
         this.price = price;
         this.seller = seller;
     }
+
+    
 
 
     public Long getId() {

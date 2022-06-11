@@ -3,9 +3,9 @@ package com.store.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.store.model.Seller;
+import com.store.model.Product;
 
 @Repository
-public interface SellerRepository extends JpaRepository<Seller, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
     
 }
