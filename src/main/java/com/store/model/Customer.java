@@ -20,6 +20,9 @@ public class Customer {
     private String CPF;
 
 
+    public Customer() {
+    }
+
     public Customer(Long id, String name, String cPF) {
         this.id = id;
         this.name = name;

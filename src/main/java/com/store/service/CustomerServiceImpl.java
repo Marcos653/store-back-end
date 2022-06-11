@@ -35,9 +35,10 @@ public class CustomerServiceImpl implements CustomerService {
     public Optional<CustomerDTO> getById(Long id) {
         Optional <Customer> customer = repo.findById(id);
 
+
         if(customer.isPresent()){
             return Optional.of(new ModelMapper()
-            .map(customer, CustomerDTO.class));
+                .map(customer.get(), CustomerDTO.class));
         }
 
         return Optional.empty();
@@ -56,11 +57,37 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
+
     private CustomerDTO salveCustomer(CustomerDTO customer){
         ModelMapper mapper = new ModelMapper();
         Customer customer_entity = mapper.map(customer, Customer.class);
         customer_entity = repo.save(customer_entity);
         return mapper.map(customer_entity, CustomerDTO.class);
     }
+
+    @Override
+    public CustomerDTO partialUpdateCustomer(Long id, String name, String cpf) {
+        ModelMapper mapper = new ModelMapper();
+        Optional<Customer> customer = repo.findById(id);
+        if(customer.isPresent()){
+
+            if(name != null){
+                customer.get().setName(name);
+                repo.save(customer.get());
+            }
+
+
+            if(cpf != null){
+                customer.get().setCPF(cpf);
+                repo.save(customer.get());
+            }
+
+            return mapper.map(customer.get(), CustomerDTO.class);
+        }
+
+        return null;
+
+    }
+
     
 }

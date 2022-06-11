@@ -11,5 +11,5 @@ public interface CustomerService {
     Optional<CustomerDTO> getById(Long id);
     void deleteCustomer(Long id);
     CustomerDTO updateCustomer(Long id, CustomerDTO newCustomer);
-
+    CustomerDTO partialUpdateCustomer(Long id, String name, String cpf);
 }

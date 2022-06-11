@@ -1,12 +1,24 @@
-package com.store.shared;
+package com.store.view.model;
 
-public class CustomerDTO {
+import com.store.shared.CustomerDTO;
 
+public class CustomerResponse {
+    
     private Long id;
     private String name;
     private String CPF;
 
     
+    public CustomerResponse(CustomerDTO customerDTO) {
+        this.id = customerDTO.getId();
+        this.name = customerDTO.getName();
+        this.CPF = customerDTO.getCPF();
+    }
+
+    public CustomerResponse() {
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -24,12 +36,6 @@ public class CustomerDTO {
     }
     public void setCPF(String cPF) {
         CPF = cPF;
-    }
-
-
-    @Override
-    public String toString() {
-        return "CustomerDTO [CPF=" + CPF + ", id=" + id + ", name=" + name + "]";
     }
 
     
